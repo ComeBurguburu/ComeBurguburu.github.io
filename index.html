@@ -7,6 +7,9 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <link rel="stylesheet" type="text/css" href="stylesheets/chosen.min.css" media="screen">
+    <script type="text/javascript" src="javascripts/chosen.min.js"></script>
+
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -31,6 +34,34 @@
         <section id="main_content">
           <h1>
 <a id="project-page" class="anchor" href="#project-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Project page</h1>
+        
+          <select class="select-chosen" multiple="multiple">
+	<option value="1">One</option>
+	<option value="2">Two</option>
+	<option value="3">Three</option>
+	<option value="4">Four</option>
+	<option value="5">Five</option>
+</select>
+$(".select-chosen").chosen({allow_single_deselect:true});
+$(".select-chosen").on("change",function(evt,param)
+										{
+											if(!!param.selected)
+											{
+										
+												console.log("select:"+param.selected);
+
+											}
+											if(!!param.deselected)
+											{
+											console.log("select:"+param.deselected);
+
+											}
+
+
+										});
+</script>
+          
+          
         </section>
 
         <footer>
