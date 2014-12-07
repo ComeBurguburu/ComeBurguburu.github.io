@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
     <link rel="stylesheet" type="text/css" href="stylesheets/chosen.min.css" media="screen">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="javascripts/chosen.jquery.min.js"></script>
 
     <!--[if lt IE 9]>
@@ -45,21 +46,21 @@
 <script type="text/javascript">
 $(".select-chosen").chosen({allow_single_deselect:true});
 $(".select-chosen").on("change",function(evt,param)
-										{
-											if(!!param.selected)
-											{
-										
-												console.log("select:"+param.selected);
+				{
+					if(!!param.selected)
+					{
+				
+						console.log("select:"+param.selected);
 
-											}
-											if(!!param.deselected)
-											{
-											console.log("select:"+param.deselected);
+					}
+					if(!!param.deselected)
+					{
+					console.log("select:"+param.deselected);
 
-											}
+					}
 
 
-										});
+				});
 </script>
           
           
