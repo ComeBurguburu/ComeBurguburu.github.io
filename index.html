@@ -37,33 +37,46 @@
           <h1>
 <a id="project-page" class="anchor" href="#project-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chosen.js Demo</h1>
         
-          <select class="select-chosen" multiple="multiple" style="width: 25%;">
+   <select class="select-chosen" multiple="multiple" style="width: 25%;">
 	<option value="1">One</option>
 	<option value="2">Two</option>
 	<option value="3">Three</option>
 	<option value="4">Four</option>
 	<option value="5">Five</option>
-</select>
+   </select>
+   <select class="select-chosen" multiple="multiple" style="width: 25%;">
+	<option value="1">One</option>
+	<option value="2">Two</option>
+	<option value="3">Three</option>
+	<option value="4">Four</option>
+	<option value="5">Five</option>
+  </select>
+
 <script type="text/javascript">
+
 $(".select-chosen").chosen({allow_single_deselect:true});
-$(".select-chosen").on("change",function(evt,param)
-				{
-					if(!!param.selected)
-					{
-				
-						console.log("select:"+param.selected);
+$(".select-chosen").on("change",function(evt,param){
+		
+		if(!!param.selected)
+		{
+			$('.select-chosen option[value="'+param.selected+'"]').prop("disabled",true);
+			$('option[value="'+param.selected+'"]',this).prop("disabled",false);
+			console.log("select:"+param.selected);
+			
+		}
+		if(!!param.deselected)
+		{
+			$('.select-chosen option[value="'+param.deselected+'"]').prop("disabled",false);
+			$('option[value="'+param.deselected+'"]',this).prop("disabled",true);
+			console.log("deselect:"+param.deselected);
 
-					}
-					if(!!param.deselected)
-					{
-					console.log("select:"+param.deselected);
+		}
+		
+		$(".select-chosen").trigger("chosen:closed");
+		$(".select-chosen").trigger("chosen:updated");
+});
 
-					}
-
-
-				});
 </script>
-          
           
         </section>
 
