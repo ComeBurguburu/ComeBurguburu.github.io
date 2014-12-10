@@ -61,16 +61,13 @@ $(".select-chosen").on("change",function(evt,param){
 		if(!!param.selected)
 		{
 			$('.select-chosen option[value="'+param.selected+'"]').prop("disabled",true);
-			$('option[value="'+param.selected+'"]',this).prop("disabled",false);
-			console.log("select:"+param.selected);
-			
+			$('option[value="'+param.selected+'"]',this).prop("disabled",false);			
 		}
+		
 		if(!!param.deselected)
 		{
 			$('.select-chosen option[value="'+param.deselected+'"]').prop("disabled",false);
 			$('option[value="'+param.deselected+'"]',this).prop("disabled",true);
-			console.log("deselect:"+param.deselected);
-
 		}
 		
 		$(".select-chosen").trigger("chosen:closed");
