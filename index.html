@@ -60,14 +60,14 @@ $(".select-chosen").on("change",function(evt,param){
 		
 		if(!!param.selected)
 		{
-			$('.select-chosen option[value="'+param.selected+'"]').prop("disabled",true);
+			$('.select-chosen option[value="'+param.selected+'"]').prop("disabled",true).prop("checked",false);
 			$('option[value="'+param.selected+'"]',this).prop("disabled",false);			
 		}
 		
 		if(!!param.deselected)
 		{
-			$('.select-chosen option[value="'+param.deselected+'"]').prop("disabled",false);
-			$('option[value="'+param.deselected+'"]',this).prop("disabled",true);
+			$('.select-chosen option[value="'+param.deselected+'"]').prop("disabled",false).prop("checked",false);
+			$('option[value="'+param.deselected+'"]',this).prop("disabled",false);
 		}
 		
 		$(".select-chosen").trigger("chosen:closed");
